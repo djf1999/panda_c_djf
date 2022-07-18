@@ -13,5 +13,8 @@
 #include<iomanip>
 //#include <math.h>
 #include<sys/timeb.h>
+#include <unistd.h>
+
+#include <sys/stat.h>
 
 #endif

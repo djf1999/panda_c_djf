@@ -5,7 +5,7 @@
 #include"M_file.h"
 
 const int    maxamb_bl=2000;         //max. number of dd-ambiguities over a baseline
-sonst int    maxamb_per_pair=600 ;   //PPP amb. fixing
+const int    maxamb_per_pair=600 ;   //PPP amb. fixing
 
 struct T_baseline{
      int ista1;
@@ -87,7 +87,7 @@ struct T_dd_ambiguity{
         srlc=0.0;
         iwl=0;
         inl=0;
-        nsd=0
+        nsd=0;
         sd_rnl_cor=0.0;
         sigcor=0.0;
      }

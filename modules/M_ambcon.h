@@ -9,7 +9,7 @@
 struct T_ambcon_header
 {
     T_time T0;
-    double dintiv;
+    double dintv;
     int nsat;
     char csat[maxant][len_satname];
     int nsite,ndef;
@@ -25,7 +25,7 @@ struct T_ambcon_rec
     double nw,nn;
 };
 
-void read_ambcon_header(T_file FAMBCON,T_ambcon_header HD);
+void read_ambcon_header(T_file& FAMBCON,T_ambcon_header& HD);
 
 void read_ambcon_rec(T_file& FAMBCON,T_ambcon_header& HD,T_ambcon_rec AMB_DD[],int idef);
 

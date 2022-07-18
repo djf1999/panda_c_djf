@@ -14,6 +14,10 @@ struct M_bnc2srif
     int lli[2][maxchn];
     int ssi[2][maxchn];
     int flag[maxchn];
+    M_bnc2srif(){
+        memset(cstaname,0,5);
+        memset(cprn,0,4*maxchn);
+    }
 };
 
 struct T_bnc_rnx_nav{
@@ -21,6 +25,9 @@ struct T_bnc_rnx_nav{
     int inew;
     int nelem;
     double data[35];
+    T_bnc_rnx_nav(){
+        memset(csat,0,4);
+    }
 };
 
 struct T_bnc_oc_cor{
@@ -29,6 +36,9 @@ struct T_bnc_oc_cor{
     double sow;
     double iod;
     double data[16];    //R/A/O C (VEL) (ACCEL) 
+    T_bnc_oc_cor(){
+        memset(csat,0,4);
+    }
 };
 
 #endif

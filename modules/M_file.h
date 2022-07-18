@@ -6,7 +6,7 @@
 
 struct T_file
 {
-    int iunit;
+    FILE* iunit;
     char name[len_filename];
 
     //as input parameters for lopenfile ??
@@ -20,10 +20,9 @@ struct T_file
     char cinfo[len_longstr];
     T_file()
     {
-        iunit=0;
         memset(name,0,len_filename);
         strcpy(form,"FORMATTED");
-        strcpy(status,"UNKNOWN");
+        strcpy(status,"w+t");
         irec_length=99999;
         ioerr=0;
         irec=0;
@@ -32,13 +31,15 @@ struct T_file
     };
 };
 
-bool lopenfile (T_file& F, bool& lstop);
+bool lopenfile (T_file& F, bool lstop);
+
+bool lclosefile (T_file& F,char* cstatus, bool lstop);
 
 bool ldeletfile(const char* fname);
 
 bool lexistfile(const char* fname);
 
-bool isizeoffile(const char* fname);
+int isizeoffile(const char* fname);
 
 
 #endif

@@ -6,3 +6,14 @@ int index_( char* s1,char s2){
     if (pos<0)pos=0;
     return pos;
 }
+
+char* Trim(char *Buf)
+{
+    int i;
+    i = strlen(Buf)-1;
+    while(Buf[i] == ' '&&i >0){
+        i--;
+        Buf[i+1] = '\0';
+    }
+    return  Buf;
+}

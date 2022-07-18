@@ -3,5 +3,5 @@
 #include"stdafx.h"
 
 int index_(char*,char);
-
+char* Trim(char *);
 #endif

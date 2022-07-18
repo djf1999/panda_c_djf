@@ -16,13 +16,13 @@ struct T_ARG{
 };
 int narg;
 
-int MAXARG;
-T_ARG* ARG;
+int MAXARG = 0;
+T_ARG* ARG = NULL;
 
-void l_alloc_args(int maxarg);
+bool l_alloc_args();
 
-void l_dealloc_args();
+bool l_dealloc_args();
 
-void get_switches();
+void get_switches(int argc,char** argv);
 
 #endif

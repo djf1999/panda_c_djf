@@ -84,6 +84,9 @@ struct T_LSQ_Estimator{
     T_LSQ_Estimator(){
         linv=false;
         l2dim=false;
+        iptx=NULL;
+        neq=NULL;
+        w=NULL;
     }
 };
 
@@ -103,6 +106,15 @@ struct T_SquareRootInfo_Filter{
     double** s;            // square root information
 
     double** sen;
+
+    T_SquareRootInfo_Filter(){
+        iptx=NULL;
+        index_obs=NULL;
+        ry=NULL;
+        sigobs=NULL;
+        s=NULL;
+        sen=NULL;
+    }
 
 };
 
@@ -139,19 +151,27 @@ struct T_Parameter{
         xest=0.0,sxest=1e20;
         xpred=0.0,sxpred=1e20;
         nmap=0;
+        map=NULL;
+        pw=NULL;
+        rwmap=NULL;
     };
 };
 
 //allocation of dynamic memory
-void l_allocate_lsq(T_LSQ_Estimator b);
+bool l_allocate_lsq(T_LSQ_Estimator& b);
+
+//deallocation of dynamic memory
+bool l_deallocate_lsq(T_LSQ_Estimator& b);
 
 //allocation of dynamic memory
-void l_deallocate_lsq(T_LSQ_Estimator b);
+bool l_allocate_srif(bool& l_qc,T_SquareRootInfo_Filter& b);
 
-//allocation of dynamic memory
-void l_allocate_srif(bool l_qc,T_SquareRootInfo_Filter b);
+// deallocation of dynamic memory
+bool l_deallocate_srif(bool& l_qc,T_SquareRootInfo_Filter& b);
 
 //allocate state-equations
-void allocate_map(T_Parameter PAR)
+bool allocate_map(T_Parameter& PAR);
+
+void copyPar(T_Parameter&PAR,T_Parameter&PAR_tmp);
 
 #endif

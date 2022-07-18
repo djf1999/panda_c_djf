@@ -98,5 +98,7 @@ void l_int_eoprec(T_bulletin_a_rec& REC);
 
 bool l_alloc_bulletin(T_bulletin_a& TBA);
 
+bool l_dealloc_bulletin(T_bulletin_a& TBA);
+
 
 #endif
